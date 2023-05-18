@@ -50,9 +50,5 @@ public
 #service worker
 ~partytown/
 
-# packages/server
-packages/server/.env
-
-# packages/web
-packages/web/.env
-
+#contentlayer
+.contentlayer/
