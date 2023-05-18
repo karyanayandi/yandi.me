@@ -4,7 +4,7 @@ export default function ContactPage() {
   return (
     <section>
       <h1 className="text-3xl font-bold">Contact</h1>
-      <div className="prose prose-neutral dark:prose-invert">
+      <div className="prose">
         <ul>
           <li>
             Email:{" "}

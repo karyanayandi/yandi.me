@@ -12,7 +12,7 @@ export default function UsesPage() {
       <p className="mb-8 mt-2 text-foreground">
         Here is what tech I am currently using for work.
       </p>
-      <div className="prose prose-neutral dark:prose-invert">
+      <div className="prose">
         <h3 id="pc">PC</h3>
         <ul>
           <li>CPU: Intel Core i3-7100</li>

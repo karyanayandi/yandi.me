@@ -8,6 +8,7 @@ export default {
     "./src/content/**/*.mdx",
   ],
   theme: {
+    darkMode: "class",
     extend: {
       colors: {
         border: "hsl(var(--border))",
