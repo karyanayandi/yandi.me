@@ -1,18 +1,10 @@
 "use client"
 
 import NextLink from "next/link"
-import localFont from "next/font/local"
 import { usePathname } from "next/navigation"
 import { LayoutGroup, motion } from "framer-motion"
 
 import { cn } from "@/lib/cn"
-
-const sundanese = localFont({
-  src: "../../public/fonts/SundaneseUnicode-2.0.ttf",
-  weight: "700",
-  variable: "--font-sundanese",
-  display: "swap",
-})
 
 const navItems = {
   "/": {
@@ -59,12 +51,7 @@ export default function Navbar() {
             className="fade relative flex scroll-pr-6 flex-row items-start px-4 pb-0 md:relative md:flex-col md:overflow-auto md:px-0"
             id="nav"
           >
-            <div
-              className={cn(
-                "my-4 hidden h-10 w-full text-xl font-bold text-foreground md:flex",
-                sundanese.variable,
-              )}
-            >
+            <div className="my-4 hidden h-10 w-full font-sundanese text-xl font-bold text-foreground md:flex">
               ᮊᮛᮡᮔ ᮚᮔ᮪
             </div>
             <div className="mb-2 mt-2 flex flex-row space-x-0 pr-10 md:mt-0 md:flex-col">

@@ -1,4 +1,5 @@
 import * as React from "react"
+import localFont from "next/font/local"
 import { Metadata } from "next"
 import { Inter } from "next/font/google"
 import { Analytics } from "@vercel/analytics/react"
@@ -8,6 +9,13 @@ import Sidebar from "@/components/Sidebar"
 import { cn } from "@/lib/cn"
 
 const inter = Inter({ subsets: ["latin"] })
+
+const sundanese = localFont({
+  src: "../../public/fonts/SundaneseUnicode-2.0.ttf",
+  weight: "700",
+  variable: "--font-sundanese",
+  display: "swap",
+})
 
 export const metadata: Metadata = {
   title: {
@@ -58,7 +66,11 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={cn("bg-background text-foreground", inter.className)}
+      className={cn(
+        "bg-background text-foreground",
+        inter.className,
+        sundanese.variable,
+      )}
     >
       <body className="mx-4 mb-40 mt-8 flex max-w-4xl flex-col antialiased md:mt-20 md:flex-row lg:mx-auto lg:mt-32">
         <Sidebar />

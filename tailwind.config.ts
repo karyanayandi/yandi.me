@@ -63,6 +63,7 @@ export default {
       },
       fontFamily: {
         sans: ["var(--font-sans)", ...fontFamily.sans],
+        sundanese: ["var(--font-sundanese)"],
       },
       typography: {
         quoteless: {
