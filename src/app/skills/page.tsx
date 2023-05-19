@@ -59,6 +59,11 @@ export default function SkillsPage() {
                 <Icon.CPlusPlus className="h-20 w-20 text-[#004283]" />
               </Card>
             </NextLink>
+            <NextLink href="https://wwww.lua.org" target="_blank">
+              <Card>
+                <Icon.Lua className="h-20 w-20 text-[#00007C]" />
+              </Card>
+            </NextLink>
           </div>
         </TabsContent>
         <TabsContent value="framework">
