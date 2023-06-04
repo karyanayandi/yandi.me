@@ -1,4 +1,10 @@
 import { TimeLine, TimeLineList } from "@/components/TimeLine"
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "About",
+  description: "About Karyana Yandi"
+}
 
 export default function AboutPage() {
   return (

@@ -1,8 +1,14 @@
 import NextLink from "next/link"
+import { Metadata } from "next"
 
 import { Card } from "@/components/Card"
 import { Icon } from "@/components/Icon"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/Tabs"
+
+export const metadata: Metadata = {
+  title: "Skills",
+  description: "Skills Karyana Yandi"
+}
 
 export default function SkillsPage() {
   return (

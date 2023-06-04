@@ -1,4 +1,10 @@
+import { Metadata } from "next"
 import NextLink from "next/link"
+
+export const metadata: Metadata = {
+  title: "Contact",
+  description: "Contact Karyana Yandi"
+}
 
 export default function ContactPage() {
   return (
