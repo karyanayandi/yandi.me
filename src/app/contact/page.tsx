@@ -3,7 +3,7 @@ import NextLink from "next/link"
 
 export const metadata: Metadata = {
   title: "Contact",
-  description: "Contact Karyana Yandi"
+  description: "Contact Karyana Yandi",
 }
 
 export default function ContactPage() {

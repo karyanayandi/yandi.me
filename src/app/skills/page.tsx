@@ -7,7 +7,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/Tabs"
 
 export const metadata: Metadata = {
   title: "Skills",
-  description: "Skills Karyana Yandi"
+  description: "Skills Karyana Yandi",
 }
 
 export default function SkillsPage() {
