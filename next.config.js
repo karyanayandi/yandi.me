@@ -6,9 +6,6 @@ const nextConfig = {
   images: {
     formats: ["image/webp"],
   },
-  experimental: {
-    serverActions: true,
-  },
   redirects() {
     try {
       return get("redirects")
@@ -26,21 +23,7 @@ const nextConfig = {
   },
 }
 
-const ContentSecurityPolicy = `
-    default-src 'self' vercel.live;
-    script-src 'self' 'unsafe-eval' 'unsafe-inline' cdn.vercel-insights.com vercel.live vitals.vercel-insights.com;
-    style-src 'self' 'unsafe-inline';
-    img-src * blob: data:;
-    media-src 'none';
-    connect-src *;
-    font-src 'self';
-`
-
 const securityHeaders = [
-  {
-    key: "Content-Security-Policy",
-    value: ContentSecurityPolicy.replace(/\n/g, ""),
-  },
   {
     key: "Referrer-Policy",
     value: "origin-when-cross-origin",
