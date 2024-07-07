@@ -10,7 +10,13 @@ const nextConfig = {
     try {
       return get("redirects")
     } catch {
-      return []
+      return [
+        {
+          source: "/fiverr",
+          destination: "https://fiverr.com/users/karyanayandi",
+          permanent: true,
+        },
+      ]
     }
   },
   headers() {
