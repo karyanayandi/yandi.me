@@ -1,5 +1,4 @@
 const { get } = require("@vercel/edge-config")
-const { withContentlayer } = require("next-contentlayer")
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -14,6 +13,11 @@ const nextConfig = {
         {
           source: "/fiverr",
           destination: "https://fiverr.com/users/karyanayandi",
+          permanent: true,
+        },
+        {
+          source: "/cv",
+          destination: "https://read.cv/karyanayandi",
           permanent: true,
         },
       ]
@@ -56,4 +60,4 @@ const securityHeaders = [
   },
 ]
 
-module.exports = withContentlayer(nextConfig)
+module.exports = nextConfig

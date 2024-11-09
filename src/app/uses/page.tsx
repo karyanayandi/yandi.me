@@ -16,41 +16,41 @@ export default function UsesPage() {
         <h3 id="pc">PC</h3>
         <ul>
           <li>CPU: Intel Core i3-7100</li>
-          <li>RAM: 8GB DDR4 2400 MT/s</li>
-          <li>GPU: Nvidia GeForce GT 1030</li>
+          <li>RAM: 16GB DDR4 2400 MT/s</li>
           <li>MOBO: MSI H110 PRO-VD PLUS MS-7A15</li>
         </ul>
         <h3 id="pc-equipment">PC Equipment</h3>
         <ul>
           <li>Monitor: Samsung S24R350 LED 24 Inch IPS 75Hz</li>
           <li>Keyboard: Fantech MaxFit M61 Mechanical</li>
-          <li>Mouse: Armaggeddon Mikoyan Foxbat-III Wireless</li>
+          <li>Mouse: Logitech M590</li>
           <li>Speaker: Sonicbar 150P</li>
         </ul>
         <h3 id="os">Operating System</h3>
         <ul>
-          <li>OS: Arch Linux</li>
-          <li>WM: i3</li>
+          <li>OS: NixOS</li>
+          <li>WM: Hyprland</li>
         </ul>
         <h3 id="coding">Coding</h3>
         <ul>
           <li>Editor: Neovim</li>
           <li>Theme: One Nord</li>
           <li>Shell: Fish</li>
-          <li>Terminal: Kitty</li>
+          <li>Terminal: Foot</li>
         </ul>
         <h3 id="software">Software</h3>
         <ul>
+          <li>TMUX</li>
+          <li>fzf</li>
           <li>Google Chrome</li>
-          <li>Postman</li>
-          <li>GIMP</li>
+          <li>Insomnia</li>
           <li>Bitwarden</li>
-          <li>Spotify</li>
+          <li>etc.</li>
         </ul>
         <h3 id="phone">Phone</h3>
         <ul>
-          <li>Sony Xperia XZ2</li>
-          <li>Xiaomi Redmi Note 8</li>
+          <li>Sony Xperia XZ2 Premium</li>
+          <li>Samsung Galazy A53</li>
         </ul>
       </div>
     </section>

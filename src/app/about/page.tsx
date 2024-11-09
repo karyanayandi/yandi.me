@@ -78,23 +78,14 @@ export default function AboutPage() {
             description="Fullstack Software Engineer"
           />
           <TimeLineList
-            date="November 2018 - June 2020"
-            title="Freelance Software Engineer"
+            date="February 2020 - Current"
+            title="Fiverr"
+            description="Freelance Software Engineer"
           />
           <TimeLineList
-            date="Jully 2018 - November 2018"
-            title="Sate Cilampeni"
-            description="Cook Helper"
-          />
-          <TimeLineList
-            date="Jully 2016 - January 2017"
-            title="DSV Stawberry"
-            description="Strawberry Packer"
-          />
-          <TimeLineList
-            date="June 2014 - November 2014"
-            title="MA Alif Al-Ittifaq"
-            description="Internet Cafe Operator"
+            date="November 2018 - November 2020"
+            title="Facebook Groups"
+            description="Freelance Software Engineer"
           />
         </TimeLine>
       </div>

@@ -21,11 +21,11 @@ const navItems = {
   },
   "/projects": {
     name: "projects",
-    hide: false,
-  },
-  "/blog": {
-    name: "blog",
     hide: true,
+  },
+  "/cv": {
+    name: "cv",
+    hide: false,
   },
   "/uses": {
     name: "uses",
