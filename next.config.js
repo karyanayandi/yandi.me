@@ -16,6 +16,11 @@ const nextConfig = {
           destination: "https://fiverr.com/users/karyanayandi",
           permanent: true,
         },
+        {
+          source: "/invite",
+          destination: "https://wedding.yandi.me/invitation/generate",
+          permanent: true,
+        }
       ]
     }
   },
@@ -57,3 +62,4 @@ const securityHeaders = [
 ]
 
 module.exports = withContentlayer(nextConfig)
+
