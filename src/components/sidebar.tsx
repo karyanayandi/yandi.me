@@ -8,31 +8,27 @@ import { LayoutGroup, motion } from "framer-motion"
 const navItems = {
   "/": {
     name: "home",
-    hide: false,
+    hideOnMobile: false,
   },
   "/about": {
     name: "about",
-    hide: false,
-  },
-  "/skills": {
-    name: "skills",
-    hide: false,
+    hideOnMobile: false,
   },
   "/projects": {
     name: "projects",
-    hide: false,
+    hideOnMobile: false,
   },
   "/blog": {
     name: "blog",
-    hide: true,
+    hideOnMobile: false,
   },
   "/uses": {
     name: "uses",
-    hide: true,
+    hideOnMobile: true,
   },
   "/contact": {
     name: "contact",
-    hide: false,
+    hideOnMobile: false,
   },
 }
 
@@ -54,39 +50,41 @@ export default function Navbar() {
               ᮊᮛᮡᮔ ᮚᮔ᮪
             </div>
             <div className="mb-2 mt-2 flex flex-row space-x-0 pr-10 md:mt-0 md:flex-col">
-              {Object.entries(navItems).map(([path, { name, hide }]) => {
-                const isActive = path === pathname
-                return (
-                  <NextLink
-                    key={path}
-                    href={path}
-                    className={cn(
-                      "align-middle transition-all hover:text-foreground/90",
-                      {
-                        flex: hide === false,
-                        "hidden md:flex": hide === true,
-                        "text-foregound/90": !isActive,
-                        "font-bold": isActive,
-                      },
-                    )}
-                  >
-                    <span className="relative px-[10px] py-[5px]">
-                      {name}
-                      {path === pathname ? (
-                        <motion.div
-                          className="absolute inset-0 z-[-1] rounded-md bg-secondary"
-                          layoutId="sidebar"
-                          transition={{
-                            type: "spring",
-                            stiffness: 350,
-                            damping: 30,
-                          }}
-                        />
-                      ) : null}
-                    </span>
-                  </NextLink>
-                )
-              })}
+              {Object.entries(navItems).map(
+                ([path, { name, hideOnMobile }]) => {
+                  const isActive = path === pathname
+                  return (
+                    <NextLink
+                      key={path}
+                      href={path}
+                      className={cn(
+                        "align-middle transition-all hover:text-foreground/90",
+                        {
+                          flex: hideOnMobile === false,
+                          "hidden md:flex": hideOnMobile === true,
+                          "text-foregound/90": !isActive,
+                          "font-bold": isActive,
+                        },
+                      )}
+                    >
+                      <span className="relative px-[10px] py-[5px]">
+                        {name}
+                        {path === pathname ? (
+                          <motion.div
+                            className="absolute inset-0 z-[-1] rounded-md bg-secondary"
+                            layoutId="sidebar"
+                            transition={{
+                              type: "spring",
+                              stiffness: 350,
+                              damping: 30,
+                            }}
+                          />
+                        ) : null}
+                      </span>
+                    </NextLink>
+                  )
+                },
+              )}
             </div>
           </nav>
         </LayoutGroup>
