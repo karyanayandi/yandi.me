@@ -17,7 +17,7 @@ export default function UsesPage() {
         <ul>
           <li>CPU: Intel Core i3-7100</li>
           <li>RAM: 16GB DDR4 2400 MT/s</li>
-          <li>GPU: none (sadly my gt gt 1030 not working anymore)</li>
+          <li>GPU: none (sadly my GT 1030 not working anymore)</li>
           <li>MOBO: MSI H110 PRO-VD PLUS MS-7A15</li>
         </ul>
         <h3 id="pc-equipment">PC Equipment</h3>
