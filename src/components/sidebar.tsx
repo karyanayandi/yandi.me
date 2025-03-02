@@ -30,6 +30,10 @@ const navItems = {
     name: "contact",
     hideOnMobile: false,
   },
+  "/cv": {
+    name: "cv",
+    hideOnMobile: false,
+  },
 }
 
 export default function Navbar() {
@@ -57,6 +61,7 @@ export default function Navbar() {
                     <NextLink
                       key={path}
                       href={path}
+                      target={path == "/cv" ? "_blank" : undefined}
                       className={cn(
                         "align-middle transition-all hover:text-foreground/90",
                         {
