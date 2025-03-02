@@ -11,9 +11,8 @@ export async function generateStaticParams() {
   }))
 }
 
-export async function generateMetadata({
-  params,
-}): Promise<Metadata | undefined> {
+export async function generateMetadata(props): Promise<Metadata | undefined> {
+  const params = await props.params;
   const post = allBlogs.find((post) => post.slug === params.slug)
   if (!post) {
     return
@@ -54,7 +53,8 @@ export async function generateMetadata({
   }
 }
 
-export default async function Blog({ params }) {
+export default async function Blog(props) {
+  const params = await props.params;
   const post = allBlogs.find((post) => post.slug === params.slug)
 
   if (!post) {
