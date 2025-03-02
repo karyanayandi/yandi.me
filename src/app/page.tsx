@@ -1,7 +1,7 @@
 export default function HomePage() {
   return (
     <section>
-      <h1 className="text-3xl font-bold">Hi!</h1>
+      <h1 className="text-3xl font-bold">Hello, World!</h1>
       <p className="my-5 max-w-[460px] text-foreground">
         <div className="prose">
           <p>I&apos;m Karyana Yandi, but you can call me Yandi or Adi.</p>
