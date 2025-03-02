@@ -1,7 +1,6 @@
 {
   "name": "yandi.me",
   "private": true,
-  "type": "module",
   "author": "Karyana Yandi <halo@yandi.me>",
   "homepage": "https://yandi.me",
   "license": "MIT",
