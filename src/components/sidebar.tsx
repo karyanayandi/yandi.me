@@ -42,13 +42,13 @@ export default function Navbar() {
     <aside className="-mx-4 md:mx-0 md:w-[150px] md:flex-shrink-0 md:px-0">
       <div className="lg:sticky lg:top-20">
         <LayoutGroup>
+          <div className="my-4 flex h-10 w-full items-center justify-center font-sundanese text-xl font-bold text-foreground md:items-start md:justify-start">
+            ᮊᮛᮡᮔ ᮚᮔ᮪
+          </div>
           <nav
             className="fade relative flex scroll-pr-6 flex-row items-start px-4 pb-0 md:relative md:flex-col md:overflow-auto md:px-0"
             id="nav"
           >
-            <div className="my-4 hidden h-10 w-full font-sundanese text-xl font-bold text-foreground md:flex">
-              ᮊᮛᮡᮔ ᮚᮔ᮪
-            </div>
             <div className="mb-2 mt-2 flex flex-row space-x-0 pr-10 md:mt-0 md:flex-col">
               {Object.entries(navItems).map(
                 ([path, { name, hideOnMobile }]) => {
