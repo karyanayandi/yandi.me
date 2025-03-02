@@ -3,4 +3,4 @@
 ## TODO: 
 - [ ] fill projects page
 - [ ] add dark mode switcher toggle
-- [ ] add link to resume
+- [x] add link to resume
