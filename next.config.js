@@ -12,6 +12,11 @@ const nextConfig = {
     } catch {
       return [
         {
+          source: "/cv",
+          destination: "https://read.cv/karyanayandi",
+          permanent: true,
+        },
+        {
           source: "/fiverr",
           destination: "https://fiverr.com/users/karyanayandi",
           permanent: true,
@@ -20,7 +25,7 @@ const nextConfig = {
           source: "/invite",
           destination: "https://wedding.yandi.me/invitation/generate",
           permanent: true,
-        }
+        },
       ]
     }
   },
@@ -62,4 +67,3 @@ const securityHeaders = [
 ]
 
 module.exports = withContentlayer(nextConfig)
-
