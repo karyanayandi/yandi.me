@@ -2,9 +2,8 @@
 
 import NextLink from "next/link"
 import { usePathname } from "next/navigation"
+import { cn } from "@yopem-ui/utils"
 import { LayoutGroup, motion } from "framer-motion"
-
-import { cn } from "@/lib/cn"
 
 const navItems = {
   "/": {

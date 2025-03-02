@@ -1,5 +1,5 @@
+import type { NextRequest } from "next/server"
 import { ImageResponse } from "@vercel/og"
-import { NextRequest } from "next/server"
 
 export async function GET(req: NextRequest) {
   try {

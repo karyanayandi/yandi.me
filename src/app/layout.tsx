@@ -1,12 +1,14 @@
 import * as React from "react"
-import localFont from "next/font/local"
-import { Metadata } from "next"
+import type { Metadata } from "next"
 import { Inter } from "next/font/google"
+import localFont from "next/font/local"
 import { Analytics } from "@vercel/analytics/react"
 
 import "./global.css"
-import Sidebar from "@/components/Sidebar"
-import { cn } from "@/lib/cn"
+
+import { cn } from "@yopem-ui/utils"
+
+import Sidebar from "@/components/sidebar"
 
 const inter = Inter({ subsets: ["latin"] })
 

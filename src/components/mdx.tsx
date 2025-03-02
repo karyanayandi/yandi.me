@@ -1,9 +1,16 @@
 import * as React from "react"
-import NextLink from "next/link"
 import NextImage from "next/image"
+import NextLink from "next/link"
 import { useMDXComponent } from "next-contentlayer/hooks"
 
-const CustomLink = ({ href, children, ...rest }) => {
+const CustomLink = ({
+  href,
+  children,
+  ...rest
+}: {
+  href: string
+  children: React.ReactNode
+}) => {
   if (href.startsWith("/")) {
     return (
       <NextLink href={href} {...rest}>
@@ -19,7 +26,7 @@ const CustomLink = ({ href, children, ...rest }) => {
   return <a target="_blank" rel="noopener noreferrer" {...rest} />
 }
 
-function RoundedImage({ src, alt, ...rest }) {
+function RoundedImage({ src, alt, ...rest }: { src: string; alt: string }) {
   return <NextImage src={src} alt={alt} className="rounded-lg" {...rest} />
 }
 

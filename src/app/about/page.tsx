@@ -1,5 +1,6 @@
-import { TimeLine, TimeLineList } from "@/components/TimeLine"
-import { Metadata } from "next"
+import type { Metadata } from "next"
+
+import { TimeLine, TimeLineList } from "@/components/time-line"
 
 export const metadata: Metadata = {
   title: "About",
@@ -25,28 +26,18 @@ export default function AboutPage() {
           Towards the end of 2018, I made the decision to fully commit to a
           career in programming. Recognizing the challenges faced by high school
           graduates in securing programming roles, I took a chance and began
-          freelancing through Facebook Groups.
+          freelancing through Facebook Groups and freelancing through Fiverr
+          since January 2020.
         </p>
         <p>
-          In 2020, I was offered a position as a full-stack software engineer at
-          Dafunda Media, and I have been working there ever since.
+          In June 2020, I was offered a position as a full-stack software
+          engineer at Dafunda Media, and I have been working there ever since.
         </p>
         <p>
           Initially, I worked independently, taking charge of all aspects of
           website technology at Dafunda Media. This involved tasks such as UI/UX
           design, developing UI libraries, working on both the frontend and
           backend, and handling server deployment.
-        </p>
-        <p>
-          Currently, I am leading a development team in the process of
-          converting a WordPress website to a headless architecture. We are
-          utilizing Next.js as the frontend framework, building new APIs with
-          Fastify, and utilizing Postgres as our database.
-        </p>
-        <p>
-          Outside of my busy work schedule, I have very little time for other
-          activities. However, when I do find some spare time, I enjoy engaging
-          in farming, playing futsal, and watching anime.
         </p>
       </div>
       <div className="my-5 space-y-5 text-foreground">
@@ -62,11 +53,6 @@ export default function AboutPage() {
             title="MA Alif Al-Ittifaq Bandung"
             description="Natural Science"
           />
-          <TimeLineList date="2011-2014" title="MTs Alif Al-Ittifaq Bandung" />
-          <TimeLineList
-            date="2005-2011"
-            title="SDN Babakan Jampang 1 Bandung"
-          />
         </TimeLine>
       </div>
       <div className="my-5 space-y-5 text-foreground">
@@ -78,23 +64,13 @@ export default function AboutPage() {
             description="Fullstack Software Engineer"
           />
           <TimeLineList
+            date="January 2020 - Current"
+            title="Fiverr"
+            description="Freelance Software Engineer"
+          />
+          <TimeLineList
             date="November 2018 - June 2020"
             title="Freelance Software Engineer"
-          />
-          <TimeLineList
-            date="Jully 2018 - November 2018"
-            title="Sate Cilampeni"
-            description="Cook Helper"
-          />
-          <TimeLineList
-            date="Jully 2016 - January 2017"
-            title="DSV Stawberry"
-            description="Strawberry Packer"
-          />
-          <TimeLineList
-            date="June 2014 - November 2014"
-            title="MA Alif Al-Ittifaq"
-            description="Internet Cafe Operator"
           />
         </TimeLine>
       </div>

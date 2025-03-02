@@ -1,6 +1,5 @@
-import { Metadata } from "next"
+import type { Metadata } from "next"
 import Link from "next/link"
-
 import { allBlogs } from "contentlayer/generated"
 
 export const metadata: Metadata = {
@@ -8,7 +7,7 @@ export const metadata: Metadata = {
   description: "Read my thoughts about software engineering.",
 }
 
-export default async function BlogPage() {
+export default function BlogPage() {
   return (
     <section>
       <h1 className="mb-5 text-3xl font-bold">Blog</h1>

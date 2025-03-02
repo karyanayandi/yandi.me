@@ -1,4 +1,4 @@
-import { Metadata } from "next"
+import type { Metadata } from "next"
 import NextLink from "next/link"
 
 export const metadata: Metadata = {
@@ -14,7 +14,7 @@ export default function ContactPage() {
         <ul>
           <li>
             Email:{" "}
-            <NextLink href="mailto:halo@yandi.me">halo@yandi.me</NextLink>
+            <NextLink href="mailto:karyana@yandi.me">karyana@yandi.me</NextLink>
           </li>
           <li>
             Github:{" "}
@@ -23,30 +23,21 @@ export default function ContactPage() {
             </NextLink>
           </li>
           <li>
-            Twitter:{" "}
-            <NextLink href="https://twitter.com/@karyanayandi" target="__blank">
+            X:{" "}
+            <NextLink href="https://x.com/@karyanayandi" target="__blank">
               @karyanayandi
+            </NextLink>
+          </li>
+          <li>
+            Blue Sky:{" "}
+            <NextLink href="https://bsky.app/profile/yandi.me" target="__blank">
+              @yandi.me
             </NextLink>
           </li>
           <li>
             Linkedin:{" "}
             <NextLink
               href="https://linkedin.com/in/karyanayandi"
-              target="__blank"
-            >
-              @karyanayandi
-            </NextLink>
-          </li>
-          <li>
-            Facebook:{" "}
-            <NextLink href="https://facebook.com/karyanayandi" target="__blank">
-              @karyanayandi
-            </NextLink>
-          </li>
-          <li>
-            Mastodon:{" "}
-            <NextLink
-              href="https://fosstodon.org/@karyanayandi"
               target="__blank"
             >
               @karyanayandi

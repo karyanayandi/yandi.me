@@ -1,19 +1,21 @@
-import type { Metadata } from "next"
 import { notFound } from "next/navigation"
-import Balancer from "react-wrap-balancer"
 import { allBlogs } from "contentlayer/generated"
+import Balancer from "react-wrap-balancer"
 
-import { Mdx } from "@/components/Mdx"
+import { Mdx } from "@/components/mdx"
 
-export async function generateStaticParams() {
+export function generateStaticParams() {
   return allBlogs.map((post) => ({
     slug: post.slug,
   }))
 }
 
-export async function generateMetadata(props): Promise<Metadata | undefined> {
+export async function generateMetadata(props: {
+  params: Promise<{ slug: string }>
+}) {
   const params = await props.params
   const post = allBlogs.find((post) => post.slug === params.slug)
+
   if (!post) {
     return
   }
@@ -53,7 +55,9 @@ export async function generateMetadata(props): Promise<Metadata | undefined> {
   }
 }
 
-export default async function Blog(props) {
+export default async function Blog(props: {
+  params: Promise<{ slug: string }>
+}) {
   const params = await props.params
   const post = allBlogs.find((post) => post.slug === params.slug)
 

@@ -1,4 +1,4 @@
-import { Metadata } from "next"
+import type { Metadata } from "next"
 
 export const metadata: Metadata = {
   title: "Projects",
@@ -7,8 +7,8 @@ export const metadata: Metadata = {
 
 export default function ProjectsPage() {
   return (
-    <div>
+    <section>
       <div>Comming soon. I am burn out.</div>
-    </div>
+    </section>
   )
 }
