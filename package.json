@@ -3,7 +3,7 @@
   "private": true,
   "author": "Karyana Yandi <halo@yandi.me>",
   "homepage": "https://yandi.me",
-  "license": "ISC",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/karyanayandi/yandi.me"
@@ -15,7 +15,8 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,css,md,mdx}\""
+    "format:check": "prettier --check \"**/*.{ts,tsx,js,jsx,css,md,mdx}\"",
+    "format:fix": "prettier --write \"**/*.{ts,tsx,js,jsx,css,md,mdx}\""
   },
   "dependencies": {
     "@radix-ui/react-tabs": "^1.1.0",
