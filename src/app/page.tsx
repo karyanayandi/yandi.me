@@ -1,14 +1,14 @@
 export default function HomePage() {
   return (
     <section>
-      <h1 className="text-3xl font-bold">Hello, World!</h1>
-      <p className="my-5 max-w-[460px] text-foreground">
-        <div className="prose">
+      <h1 className="text-3xl font-bold md:text-4xl">Hello, World!</h1>
+      <div className="my-5 max-w-[460px] text-foreground">
+        <div className="prose text-base md:text-lg">
           <p>I&apos;m Karyana Yandi, but you can call me Yandi or Adi.</p>
         </div>
-      </p>
-      <p className="my-5 max-w-[600px] text-foreground">
-        <div className="prose">
+      </div>
+      <div className="my-5 max-w-[600px] text-foreground">
+        <div className="prose text-base md:text-lg">
           <p>
             I am a self-taught Software Engineer, write first code at 2011 and
             have been working in the software engineering industry since 2018.
@@ -18,7 +18,7 @@ export default function HomePage() {
             experience with Lua, Go, Python, Rust, and PHP.
           </div>
         </div>
-      </p>
+      </div>
     </section>
   )
 }
