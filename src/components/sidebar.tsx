@@ -22,10 +22,6 @@ const navItems = {
     name: "blog",
     hideOnMobile: false,
   },
-  "/uses": {
-    name: "uses",
-    hideOnMobile: true,
-  },
   "/contact": {
     name: "contact",
     hideOnMobile: false,

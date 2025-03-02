@@ -6,7 +6,7 @@ export default function sitemap() {
     lastModified: post.publishedAt,
   }))
 
-  const routes = ["", "/about", "/projects", "/blog", "/uses", "/contact"].map(
+  const routes = ["", "/about", "/projects", "/blog", "/contact"].map(
     (route) => ({
       url: `https://yandi.me${route}`,
       lastModified: new Date().toISOString().split("T")[0],
