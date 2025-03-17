@@ -3,12 +3,12 @@ export default function HomePage() {
     <section>
       <h1 className="text-3xl font-bold md:text-4xl">Hello, World!</h1>
       <div className="my-5 max-w-[460px] text-foreground">
-        <div className="prose text-base md:text-lg">
+        <div className="text-base md:text-lg">
           <p>I&apos;m Karyana Yandi, but you can call me Yandi or Adi.</p>
         </div>
       </div>
       <div className="my-5 max-w-[600px] text-foreground">
-        <div className="prose text-base md:text-lg">
+        <div className="text-base md:text-lg">
           <p>
             I am a self-taught Software Engineer, write first code at 2011 and
             have been working in the software engineering industry since 2018.
