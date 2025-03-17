@@ -1,0 +1,63 @@
+---
+title: "Handle Trailing Slashes in Astro"
+publishedAt: "2025-03-07"
+summary: "How to handle trailing slashes with Astro."
+---
+
+When working with Next.js, handling trailing slashes is seamless. If you visit a page with a trailing slash, Next.js automatically redirects you to the same page without it. This is great for SEO and user experience, keeping URLs consistent.
+
+However, in Astro, things work a bit differently. If you set trailingSlash: "never" in astro.config.mjs, Astro ensures that URLs won’t end with a trailing slash. But there’s a catch—if a user manually visits a page with a trailing slash, Astro won’t automatically redirect them to the non-trailing version.
+
+For those using Vercel, this issue is easy to fix. You can simply create a vercel.json file at the root of your project with the following content:
+```json
+{
+  "rewrites": [
+    {
+      "source": "/:path+/",
+      "destination": "/:path+"
+    }
+  ]
+}
+```
+
+But I don’t use Vercel for my project, so I needed a different approach. I didn’t want to manually define rewrites or redirects for every page—I wanted a global solution.
+
+I searched for answers, even asked AI for help, but nothing really solved the problem. Then, I went back to the Astro documentation and realized something: I could use middleware to handle this! Surprisingly, when I asked on Discord, no one suggested this—they only told me to configure it in Nginx, which wasn’t an option for me.
+
+So, I wrote this middleware to globally remove trailing slashes:
+
+
+```typescript
+
+import { defineMiddleware } from "astro:middleware"
+
+export const onRequest = defineMiddleware(({ url, redirect }, next) => {
+  const pathname = url.pathname
+
+  if (pathname.length > 1 && pathname.endsWith("/")) {
+    return redirect(pathname.slice(0, -1), 301)
+  }
+
+  return next()
+})
+
+```
+
+Now, whenever a user visits a page with a trailing slash, they get redirected to the proper URL—no extra configurations, no manual rewrites, just a clean, automatic fix.
+
+But, If you prefer URLs with trailing slashes, you can modify the middleware like this:
+
+```typescript
+
+export const onRequest = defineMiddleware(({ url, redirect }, next) => {
+  const pathname = url.pathname
+
+  if (!pathname.endsWith("/") && !pathname.includes(".")) {
+    return redirect(`${pathname}/`, 301)
+  }
+
+  return next()
+})
+````
+
+That’s it! Just a small tweak to the logic, and your middleware will handle trailing slashes globally. 🚀
