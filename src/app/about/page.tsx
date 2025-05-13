@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import Link from "next/link"
 
 import { TimeLine, TimeLineList } from "@/components/time-line"
 
@@ -14,7 +15,7 @@ export default function AboutPage() {
       <div className="my-5 space-y-5 text-foreground">
         <p>
           I started learning programming as a hobby in 2011, without knowing
-          that it would eventually lead me to become a software engineer.
+          that it would eventually lead me to become a software developer.
         </p>
         <p>
           After graduating from high school and faced with economic demands, I
@@ -31,13 +32,44 @@ export default function AboutPage() {
         </p>
         <p>
           In June 2020, I was offered a position as a full-stack software
-          engineer at Dafunda Media, and I have been working there ever since.
+          developer at{" "}
+          <Link
+            href="https://dafunda.com"
+            target="_blank"
+            className="font-semibold underline"
+          >
+            PT. Melabuh Media Kreatif (Dafunda Media)
+          </Link>
+          , and I have been working there ever since.
         </p>
         <p>
-          Initially, I worked independently, taking charge of all aspects of
-          website technology at Dafunda Media. This involved tasks such as UI/UX
-          design, developing UI libraries, working on both the frontend and
-          backend, and handling server deployment.
+          Until Januari 2025 I worked independently, taking charge of all
+          aspects of website technology at Dafunda Media. This involved tasks
+          such as UI/UX design, developing UI libraries, working on both the
+          frontend and backend, and handling server deployment.
+        </p>
+        <p>
+          Currently, I focused working as a freelancing on{" "}
+          <Link
+            href="https://fiverr.com/users/karyanayandi"
+            target="_blank"
+            className="font-semibold underline"
+          >
+            Fiverr
+          </Link>
+          , specializing in headless technologies and AI-powered tools.
+        </p>
+        <p>
+          I also build{" "}
+          <Link
+            href="https://github.com/yopem"
+            target="_blank"
+            className="font-semibold underline"
+          >
+            open-source projects
+          </Link>{" "}
+          that provide smart, AI-enhanced alternatives to popular software
+          solutions.
         </p>
       </div>
       <div className="my-5 space-y-5 text-foreground">
@@ -59,18 +91,18 @@ export default function AboutPage() {
         <h2 className="text-2xl font-bold">Work Experience</h2>
         <TimeLine>
           <TimeLineList
-            date="June 2020 - Current"
+            date="June 2020 - January 2025"
             title="Dafunda Media (PT Melabuh Media Kreatif)"
-            description="Fullstack Software Engineer"
+            description="Full-stack Software Developer"
           />
           <TimeLineList
             date="January 2020 - Current"
             title="Fiverr"
-            description="Freelance Software Engineer"
+            description="Freelance Software Developer"
           />
           <TimeLineList
             date="November 2018 - June 2020"
-            title="Freelance Software Engineer"
+            title="Freelance Software Developer"
           />
         </TimeLine>
       </div>

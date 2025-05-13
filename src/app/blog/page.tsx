@@ -4,7 +4,7 @@ import { allBlogs } from "contentlayer/generated"
 
 export const metadata: Metadata = {
   title: "Blog",
-  description: "Read my thoughts about software engineering.",
+  description: "Read my thoughts about software developing.",
 }
 
 export default function BlogPage() {

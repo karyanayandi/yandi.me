@@ -1,3 +1,5 @@
+import Link from "next/link"
+
 export default function HomePage() {
   return (
     <section>
@@ -8,14 +10,33 @@ export default function HomePage() {
         </div>
       </div>
       <div className="my-5 max-w-[600px] text-foreground">
-        <div className="text-base md:text-lg">
+        <div className="space-y-4 text-base md:text-lg">
           <p>
-            I am a self-taught Software Engineer, write first code at 2011 and
-            have been working in the software engineering industry since 2018.
+            I am a freelance full-stack developer on{" "}
+            <Link
+              href="https://fiverr.com/users/karyanayandi"
+              target="_blank"
+              className="font-semibold underline"
+            >
+              Fiverr
+            </Link>
+            , specializing in headless technologies and AI-powered tools.
+          </p>
+          <p>
+            I also build{" "}
+            <Link
+              href="https://github.com/yopem"
+              target="_blank"
+              className="font-semibold underline"
+            >
+              open-source projects
+            </Link>{" "}
+            that provide smart, AI-enhanced alternatives to popular software
+            solutions.
           </p>
           <div>
-            I primarily work with JavaScript/TypeScript, but I also have
-            experience with Lua, Go, Python, Rust, and PHP.
+            I primarily work with JavaScript or TypeScript, but I also have
+            experience with Lua, Go, Python, and PHP.
           </div>
         </div>
       </div>
