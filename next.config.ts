@@ -36,7 +36,7 @@ const nextConfig: NextConfig = {
     return [
       {
         source: "/cv",
-        destination: "https://read.cv/karyanayandi",
+        destination: "https://yandi.me/cv.pdf",
         permanent: true,
       },
       {
