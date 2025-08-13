@@ -17,6 +17,7 @@ const AVAILABLE_COMMANDS = [
   "projects",
   "contact",
   "blog",
+  "cv",
   "history",
   "date",
   "echo",
@@ -59,6 +60,7 @@ export function Terminal({ className }: TerminalProps) {
   projects - View my projects
   contact  - Contact information
   blog     - View my blog posts
+  cv       - Open my CV in a new tab
   history  - Command history
   date     - Show current date
   echo     - Echo text to the terminal`)
@@ -90,6 +92,10 @@ Linkedin: https://linkedin.com/in/karyanayandi`)
       case "blog":
         addToHistory("Opening blog...")
         window.location.href = "/blog"
+        break
+      case "cv":
+        addToHistory("Opening CV...")
+        window.open("/cv", "_blank")
         break
       case "about":
         addToHistory("Opening about...")

@@ -32,6 +32,7 @@ export function TerminalProvider({ children }: { children: React.ReactNode }) {
       "  projects - View my projects",
       "  contact  - Contact information",
       "  blog     - View my blog posts",
+      "  cv       - Open my CV in a new tab",
       "  history  - Command history",
       "  date     - Show current date",
       "  echo     - Echo text to the terminal",
