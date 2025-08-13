@@ -2,6 +2,7 @@ import { notFound } from "next/navigation"
 import { allBlogs } from "contentlayer/generated"
 import Balancer from "react-wrap-balancer"
 
+import { HomeNav } from "@/components/home-nav"
 import { Mdx } from "@/components/mdx"
 
 export function generateStaticParams() {
@@ -66,20 +67,23 @@ export default async function Blog(props: {
   }
 
   return (
-    <section>
-      <script type="application/ld+json">
-        {JSON.stringify(post.structuredData)}
-      </script>
-      <h1 className="max-w-[650px] text-3xl font-bold">
-        <Balancer>{post.title}</Balancer>
-      </h1>
-      <div className="mb-8 mt-4 grid max-w-[650px] grid-cols-[auto_1fr_auto] items-center font-mono text-sm">
-        <div className="rounded-md bg-muted/80 px-2 py-1 tracking-tighter">
-          {post.publishedAt}
+    <>
+      <HomeNav />
+      <section>
+        <script type="application/ld+json">
+          {JSON.stringify(post.structuredData)}
+        </script>
+        <h1 className="max-w-[650px] text-3xl font-bold">
+          <Balancer>{post.title}</Balancer>
+        </h1>
+        <div className="mb-8 mt-4 grid max-w-[650px] grid-cols-[auto_1fr_auto] items-center font-mono text-sm">
+          <div className="rounded-md bg-muted/80 px-2 py-1 tracking-tighter">
+            {post.publishedAt}
+          </div>
+          <div className="mx-2 h-[0.2em] bg-muted/80" />
         </div>
-        <div className="mx-2 h-[0.2em] bg-muted/80" />
-      </div>
-      <Mdx code={post.body.code} />
-    </section>
+        <Mdx code={post.body.code} />
+      </section>
+    </>
   )
 }

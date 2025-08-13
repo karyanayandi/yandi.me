@@ -1,5 +1,7 @@
 import type { Metadata } from "next"
 
+import { HomeNav } from "@/components/home-nav"
+
 export const metadata: Metadata = {
   title: "About",
   description: "About Karyana Yandi",
@@ -8,6 +10,7 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <section className="mx-auto max-w-3xl py-8">
+      <HomeNav />
       <div className="rounded-lg border border-black bg-white p-6 font-mono text-black dark:border-white dark:bg-black dark:text-white">
         <div className="mb-6">
           <h1 className="mb-4 text-2xl font-bold">{"$ cat about.txt"}</h1>
