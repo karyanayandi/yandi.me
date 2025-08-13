@@ -1,9 +1,9 @@
 import { notFound } from "next/navigation"
-import { allBlogs } from "contentlayer/generated"
 import Balancer from "react-wrap-balancer"
 
 import { BackButton } from "@/components/back-button"
 import { Mdx } from "@/components/mdx"
+import { allBlogs } from ".contentlayer/generated"
 
 export function generateStaticParams() {
   return allBlogs.map((post) => ({

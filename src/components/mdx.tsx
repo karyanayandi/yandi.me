@@ -1,7 +1,7 @@
 import * as React from "react"
 import NextImage from "next/image"
 import NextLink from "next/link"
-import { useMDXComponent } from "next-contentlayer/hooks"
+import { useMDXComponent } from "next-contentlayer2/hooks"
 
 const CustomLink = ({
   href,

@@ -1,8 +1,8 @@
 import type { Metadata } from "next"
 import Link from "next/link"
-import { allBlogs } from "contentlayer/generated"
 
 import { BackButton } from "@/components/back-button"
+import { allBlogs } from ".contentlayer/generated"
 
 export const metadata: Metadata = {
   title: "Blog",
