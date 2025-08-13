@@ -33,6 +33,9 @@ const AVAILABLE_COMMANDS = [
   "fortune",
 ]
 
+const AVAILABLE_FILES = ["README.md"]
+const FILE_COMMANDS = ["cat", "ls", "less", "head", "tail"]
+
 export function Terminal({ className }: TerminalProps) {
   const {
     commands,
@@ -180,11 +183,27 @@ Linkedin: https://linkedin.com/in/karyanayandi`)
 
   const getSuggestion = (value: string): string => {
     if (!value) return ""
-    const lowerValue = value.toLowerCase()
-    const matchingCommand = AVAILABLE_COMMANDS.find(
-      (cmd) => cmd.startsWith(lowerValue) && cmd !== lowerValue,
-    )
-    return matchingCommand ? matchingCommand.substring(value.length) : ""
+    const parts = value.split(" ")
+    if (parts.length === 1) {
+      // Autocomplete command only if not a file command
+      const lowerValue = value.toLowerCase()
+      const matchingCommand = AVAILABLE_COMMANDS.find(
+        (cmd) => cmd.startsWith(lowerValue) && cmd !== lowerValue,
+      )
+      return matchingCommand ? matchingCommand.substring(value.length) : ""
+    } else if (
+      parts.length === 2 &&
+      FILE_COMMANDS.includes(parts[0]) &&
+      parts[1]
+    ) {
+      // Autocomplete filename for any file-expecting command
+      const partialFile = parts[1]
+      const file = AVAILABLE_FILES[0]
+      if (file.startsWith(partialFile) && file !== partialFile) {
+        return file.substring(partialFile.length)
+      }
+    }
+    return ""
   }
 
   // Handle key down events
@@ -227,7 +246,15 @@ Linkedin: https://linkedin.com/in/karyanayandi`)
       e.preventDefault()
       // Accept the current suggestion
       if (suggestion) {
-        setInput(input + suggestion)
+        // eslint-disable-next-line @typescript-eslint/prefer-regexp-exec
+        const match = input.match(/^(cat)\s*(.*)$/)
+        if (match) {
+          const cmd = match[1]
+          const partialFile = match[2]
+          setInput(cmd + " " + partialFile + suggestion)
+        } else {
+          setInput(input + suggestion)
+        }
         setSuggestion("")
       }
     } else if (e.key === "ArrowRight") {
@@ -303,7 +330,16 @@ Linkedin: https://linkedin.com/in/karyanayandi`)
             {suggestion && (
               <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-0 text-foreground/50">
                 <span className="opacity-0">{input}</span>
-                <span className="text-foreground/70">{suggestion}</span>
+                <span className="text-foreground/70">
+                  {(() => {
+                    const parts = input.split(" ")
+                    if (parts.length === 2 && parts[0] === "cat") {
+                      return suggestion
+                    }
+                    // For command autocomplete
+                    return suggestion
+                  })()}
+                </span>
               </div>
             )}
           </div>

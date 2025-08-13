@@ -7,7 +7,7 @@ export default function HomePage() {
         <Terminal />
       </div>
 
-      <div className="mt-8 text-center text-xs text-gray-500">
+      <div className="mt-8 text-center text-xs text-accent-foreground/70">
         <p>Type "help" to see available commands</p>
       </div>
     </section>
