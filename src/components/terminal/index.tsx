@@ -88,8 +88,8 @@ Blue Sky: https://bsky.app/profile/yandi.me
 Linkedin: https://linkedin.com/in/karyanayandi`)
         break
       case "blog":
-        window.open("/blog", "_blank")
-        addToHistory("Opening blog in new tab...")
+        addToHistory("Opening blog...")
+        window.location.href = "/blog"
         break
       case "history":
         if (commands.length > 0) {
