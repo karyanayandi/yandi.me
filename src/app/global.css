@@ -4,45 +4,64 @@
 
 @layer base {
   :root {
-    --background: 0 0% 0%;
-    --foreground: 120 100% 37%;
-
-    --muted: 120 3% 15%;
-    --muted-foreground: 120 3% 50%;
-
-    --popover: 0 0% 0%;
-    --popover-foreground: 120 100% 37%;
-
-    --card: 0 0% 0%;
-    --card-foreground: 120 100% 37%;
-
-    --border: 120 100% 37%;
-    --input: 120 100% 37%;
-
-    --primary: 120 100% 37%;
-    --primary-foreground: 0 0% 0%;
-
-    --secondary: 120 3% 15%;
-    --secondary-foreground: 120 100% 37%;
-
-    --accent: 120 3% 15%;
-    --accent-foreground: 120 100% 37%;
-
-    --success: 120 100% 37%;
-    --success-foreground: 0 0% 0%;
-
+    /* Light mode (default) */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 0%;
+    --muted: 0 0% 90%;
+    --muted-foreground: 0 0% 40%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 0%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 0%;
+    --border: 0 0% 0%;
+    --input: 0 0% 0%;
+    --primary: 0 0% 0%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 90%;
+    --secondary-foreground: 0 0% 0%;
+    --accent: 0 0% 90%;
+    --accent-foreground: 0 0% 0%;
+    --success: 120 0% 50%;
+    --success-foreground: 0 0% 100%;
     --info: 199 89% 48%;
     --info-foreground: 0 0% 100%;
-
     --warning: 45 93% 47%;
     --warning-foreground: 0 0% 0%;
-
     --danger: 0 100% 50%;
     --danger-foreground: 0 0% 100%;
-
-    --ring: 120 100% 37%;
-
+    --ring: 0 0% 0%;
     --radius: 0rem;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --background: 0 0% 0%;
+      --foreground: 0 0% 100%;
+      --muted: 0 0% 10%;
+      --muted-foreground: 0 0% 60%;
+      --popover: 0 0% 0%;
+      --popover-foreground: 0 0% 100%;
+      --card: 0 0% 0%;
+      --card-foreground: 0 0% 100%;
+      --border: 0 0% 100%;
+      --input: 0 0% 100%;
+      --primary: 0 0% 100%;
+      --primary-foreground: 0 0% 0%;
+      --secondary: 0 0% 10%;
+      --secondary-foreground: 0 0% 100%;
+      --accent: 0 0% 10%;
+      --accent-foreground: 0 0% 100%;
+      --success: 120 0% 50%;
+      --success-foreground: 0 0% 0%;
+      --info: 199 89% 48%;
+      --info-foreground: 0 0% 0%;
+      --warning: 45 93% 47%;
+      --warning-foreground: 0 0% 100%;
+      --danger: 0 100% 50%;
+      --danger-foreground: 0 0% 0%;
+      --ring: 0 0% 100%;
+      --radius: 0rem;
+    }
   }
 
   * {

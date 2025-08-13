@@ -215,14 +215,14 @@ Linkedin: https://linkedin.com/in/karyanayandi`)
   return (
     <div
       className={cn(
-        "overflow-hidden rounded-lg border border-green-400 bg-black shadow-lg shadow-green-400/10",
+        "overflow-hidden rounded-lg border border-black bg-white text-black shadow-lg shadow-black/10 dark:border-white dark:bg-black dark:text-white dark:shadow-white/10",
         className,
       )}
       onClick={focusInput}
       ref={terminalRef}
     >
-      <div className="flex items-center border-b border-green-400/30 px-4 py-2">
-        <div className="flex-1 text-center text-xs text-green-400/70">
+      <div className="flex items-center border-b border-black/30 px-4 py-2 dark:border-white/30">
+        <div className="flex-1 text-center text-xs text-black/70 dark:text-white/70">
           karyana@yandi.me:~
         </div>
       </div>
@@ -237,7 +237,7 @@ Linkedin: https://linkedin.com/in/karyanayandi`)
         </div>
 
         <form onSubmit={handleSubmit} className="flex items-center">
-          <span className="mr-2 text-green-400">{directory} $</span>
+          <span className="mr-2 text-black dark:text-white">{directory} $</span>
           <div className="relative flex-1">
             {/* Main input */}
             <input
@@ -246,20 +246,22 @@ Linkedin: https://linkedin.com/in/karyanayandi`)
               value={input}
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={handleKeyDown}
-              className="w-full bg-transparent text-green-400 caret-green-400 outline-none"
+              className="w-full bg-transparent text-black caret-black outline-none dark:text-white dark:caret-white"
               spellCheck="false"
               autoFocus
             />
 
             {/* Fish-shell style autocomplete suggestion */}
             {suggestion && (
-              <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-0 text-green-400/50">
+              <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-0 text-black/50 dark:text-white/50">
                 <span className="opacity-0">{input}</span>
-                <span className="text-green-400/70">{suggestion}</span>
+                <span className="text-black/70 dark:text-white/70">
+                  {suggestion}
+                </span>
               </div>
             )}
           </div>
-          <span className="ml-1 inline-block h-5 w-2 animate-pulse bg-green-400"></span>
+          <span className="ml-1 inline-block h-5 w-2 animate-pulse bg-black dark:bg-white"></span>
         </form>
       </div>
     </div>
