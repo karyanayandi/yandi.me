@@ -21,6 +21,10 @@ const AVAILABLE_COMMANDS = [
   "history",
   "date",
   "echo",
+  "ls",
+  "pwd",
+  "uname",
+  "fortune",
 ]
 
 export function Terminal({ className }: TerminalProps) {
@@ -53,17 +57,21 @@ export function Terminal({ className }: TerminalProps) {
     switch (trimmedCmd.toLowerCase()) {
       case "help":
         addToHistory(`Available commands:
-  help     - Show this help message
-  clear    - Clear the terminal
-  whoami   - Who am I?
-  about    - About me
-  projects - View my projects
-  contact  - Contact information
-  blog     - View my blog posts
-  cv       - Open my CV in a new tab
-  history  - Command history
-  date     - Show current date
-  echo     - Echo text to the terminal`)
+  help         - Show this help message
+  clear        - Clear the terminal
+  whoami       - Who am I?
+  about        - About me
+  projects     - View my projects
+  contact      - Contact information
+  blog         - View my blog posts
+  cv           - Open my CV in a new tab
+  history      - Command history
+  date         - Show current date
+  echo         - Echo text to the terminal
+  ls           - List files
+  pwd          - Print working directory
+  uname        - Show system info
+  fortune      - Get a random quote`)
         break
       case "clear":
         clearCommands()
@@ -111,9 +119,39 @@ Linkedin: https://linkedin.com/in/karyanayandi`)
       case "date":
         addToHistory(new Date().toString())
         break
+      case "ls":
+        addToHistory("README.md")
+        break
+      case "pwd":
+        addToHistory(directory)
+        break
+      case "uname":
+        addToHistory("Linux yandi.me 6.9.9-arch1-1")
+        break
+      case "fortune":
+        {
+          const fortunes = [
+            "The best way to predict the future is to invent it.",
+            "Code is like humor. When you have to explain it, it’s bad.",
+            "Simplicity is the soul of efficiency.",
+            "There are two ways to write error-free programs; only the third one works.",
+            "AI will not replace you, but a person using AI might.",
+            "The only constant in the technology industry is change.",
+            "Good design adds value faster than it adds cost.",
+            "The function of good software is to make the complex appear simple.",
+            "Programmer: A machine that turns coffee into code.",
+            "Don't worry if it doesn't work right. If everything did, you'd be out of a job.",
+          ]
+          addToHistory(fortunes[Math.floor(Math.random() * fortunes.length)])
+        }
+        break
       default:
         if (trimmedCmd.startsWith("echo ")) {
           addToHistory(trimmedCmd.substring(5))
+        } else if (trimmedCmd === "cat README.md") {
+          addToHistory(
+            "# yandi.me\nKaryana Yandi's personal website.\nBuilt with Next.js, Tailwind, and Contentlayer.",
+          )
         } else {
           addToHistory(
             `Command not found: ${trimmedCmd}. Type 'help' for available commands.`,

@@ -36,6 +36,10 @@ export function TerminalProvider({ children }: { children: React.ReactNode }) {
       "  history  - Command history",
       "  date     - Show current date",
       "  echo     - Echo text to the terminal",
+      "  ls       - List files",
+      "  pwd      - Print working directory",
+      "  uname    - Show system information",
+      "  fortune  - Get a random quote",
       "",
       "Type a command and press Enter to get started!",
     ])
