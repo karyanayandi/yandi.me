@@ -2,7 +2,7 @@
 
 import React, { createContext, useContext, useEffect, useState } from "react"
 
-type TerminalContextType = {
+interface TerminalContextProps {
   commands: string[]
   addCommand: (command: string) => void
   clearCommands: () => void
@@ -12,7 +12,7 @@ type TerminalContextType = {
   addToHistory: (output: string) => void
 }
 
-const TerminalContext = createContext<TerminalContextType | null>(null)
+const TerminalContext = createContext<TerminalContextProps | null>(null)
 
 export function TerminalProvider({ children }: { children: React.ReactNode }) {
   const [commands, setCommands] = useState<string[]>([])

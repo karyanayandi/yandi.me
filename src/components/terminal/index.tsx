@@ -5,7 +5,7 @@ import { cn } from "@yopem-ui/utils"
 
 import { useTerminal } from "./context"
 
-type TerminalProps = {
+interface TerminalProps {
   className?: string
 }
 
@@ -49,7 +49,6 @@ export function Terminal({ className }: TerminalProps) {
 
     addCommand(trimmedCmd)
 
-    // Handle built-in commands
     switch (trimmedCmd.toLowerCase()) {
       case "help":
         addToHistory(`Available commands:
@@ -120,7 +119,6 @@ Linkedin: https://linkedin.com/in/karyanayandi`)
     historyIndexRef.current = -1
   }
 
-  // Handle form submission
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     // Use the full input including any accepted suggestion
@@ -130,7 +128,6 @@ Linkedin: https://linkedin.com/in/karyanayandi`)
     setSuggestion("")
   }
 
-  // Get command suggestion based on input
   const getSuggestion = (value: string): string => {
     if (!value) return ""
     const lowerValue = value.toLowerCase()
@@ -144,7 +141,6 @@ Linkedin: https://linkedin.com/in/karyanayandi`)
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === "Enter") {
       e.preventDefault()
-      // Accept the suggestion if there is one
       const fullInput = input + suggestion
       executeCommand(fullInput)
       setInput("")
@@ -152,7 +148,6 @@ Linkedin: https://linkedin.com/in/karyanayandi`)
     } else if (e.key === "ArrowUp") {
       e.preventDefault()
       if (commands.length > 0) {
-        // Navigate through command history
         if (historyIndexRef.current === -1) {
           historyIndexRef.current = commands.length - 1
         } else if (historyIndexRef.current > 0) {
@@ -166,7 +161,6 @@ Linkedin: https://linkedin.com/in/karyanayandi`)
     } else if (e.key === "ArrowDown") {
       e.preventDefault()
       if (commands.length > 0) {
-        // Navigate through command history
         if (
           historyIndexRef.current >= 0 &&
           historyIndexRef.current < commands.length - 1
@@ -194,7 +188,6 @@ Linkedin: https://linkedin.com/in/karyanayandi`)
         setSuggestion("")
       }
     } else if (e.key === "Escape") {
-      // Clear suggestions
       setSuggestion("")
     }
   }

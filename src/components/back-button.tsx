@@ -7,7 +7,7 @@ export const BackButton: React.FC = () => (
     <button
       type="button"
       onClick={() => {
-        if (document.referrer && document.referrer.includes("yandi.me")) {
+        if (document.referrer.includes("yandi.me")) {
           window.history.back()
         } else {
           window.location.href = "/"
