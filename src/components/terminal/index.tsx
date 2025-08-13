@@ -55,7 +55,8 @@ export function Terminal({ className }: TerminalProps) {
         addToHistory(`Available commands:
   help     - Show this help message
   clear    - Clear the terminal
-  whoami   - About me
+  whoami   - Who am I?
+  about    - About me
   projects - View my projects
   contact  - Contact information
   blog     - View my blog posts
@@ -90,6 +91,10 @@ Linkedin: https://linkedin.com/in/karyanayandi`)
       case "blog":
         addToHistory("Opening blog...")
         window.location.href = "/blog"
+        break
+      case "about":
+        addToHistory("Opening about...")
+        window.location.href = "/about"
         break
       case "history":
         if (commands.length > 0) {
