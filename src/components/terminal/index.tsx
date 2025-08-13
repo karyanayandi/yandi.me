@@ -9,6 +9,19 @@ type TerminalProps = {
   className?: string
 }
 
+// Available commands for autocomplete
+const AVAILABLE_COMMANDS = [
+  "help",
+  "clear",
+  "whoami",
+  "projects",
+  "contact",
+  "blog",
+  "history",
+  "date",
+  "echo",
+]
+
 export function Terminal({ className }: TerminalProps) {
   const {
     commands,
@@ -19,8 +32,10 @@ export function Terminal({ className }: TerminalProps) {
     addToHistory,
   } = useTerminal()
   const [input, setInput] = useState("")
+  const [suggestion, setSuggestion] = useState("")
   const terminalRef = useRef<HTMLDivElement>(null)
   const inputRef = useRef<HTMLInputElement>(null)
+  const historyIndexRef = useRef<number>(-1)
 
   // Focus the input when the terminal is clicked
   const focusInput = () => {
@@ -95,22 +110,85 @@ Linkedin: https://linkedin.com/in/karyanayandi`)
           )
         }
     }
+    
+    // Reset history index after executing a command
+    historyIndexRef.current = -1
   }
 
   // Handle form submission
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    executeCommand(input)
+    // Use the full input including any accepted suggestion
+    const fullInput = input + suggestion
+    executeCommand(fullInput)
     setInput("")
+    setSuggestion("")
+  }
+
+  // Get command suggestion based on input
+  const getSuggestion = (value: string): string => {
+    if (!value) return ""
+    const lowerValue = value.toLowerCase()
+    const matchingCommand = AVAILABLE_COMMANDS.find(cmd => 
+      cmd.startsWith(lowerValue) && cmd !== lowerValue
+    )
+    return matchingCommand ? matchingCommand.substring(value.length) : ""
   }
 
   // Handle key down events
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === "Enter") {
-      executeCommand(input)
+      e.preventDefault()
+      // Accept the suggestion if there is one
+      const fullInput = input + suggestion
+      executeCommand(fullInput)
       setInput("")
+      setSuggestion("")
+    } else if (e.key === "ArrowUp") {
+      e.preventDefault()
+      if (commands.length > 0) {
+        // Navigate through command history
+        if (historyIndexRef.current === -1) {
+          historyIndexRef.current = commands.length - 1
+        } else if (historyIndexRef.current > 0) {
+          historyIndexRef.current--
+        }
+        if (historyIndexRef.current >= 0) {
+          setInput(commands[historyIndexRef.current])
+          setSuggestion("")
+        }
+      }
+    } else if (e.key === "ArrowDown") {
+      e.preventDefault()
+      if (commands.length > 0) {
+        // Navigate through command history
+        if (historyIndexRef.current >= 0 && historyIndexRef.current < commands.length - 1) {
+          historyIndexRef.current++
+          setInput(commands[historyIndexRef.current])
+        } else {
+          historyIndexRef.current = -1
+          setInput("")
+          setSuggestion("")
+        }
+      }
+    } else if (e.key === "Tab") {
+      e.preventDefault()
+      // Accept the current suggestion
+      if (suggestion) {
+        setInput(input + suggestion)
+        setSuggestion("")
+      }
+    } else if (e.key === "Escape") {
+      // Clear suggestions
+      setSuggestion("")
     }
   }
+
+  // Update suggestion when input changes
+  useEffect(() => {
+    const newSuggestion = getSuggestion(input)
+    setSuggestion(newSuggestion)
+  }, [input])
 
   // Focus the input on mount
   useEffect(() => {
@@ -150,16 +228,27 @@ Linkedin: https://linkedin.com/in/karyanayandi`)
 
         <form onSubmit={handleSubmit} className="flex items-center">
           <span className="mr-2 text-green-400">{directory} $</span>
-          <input
-            ref={inputRef}
-            type="text"
-            value={input}
-            onChange={(e) => setInput(e.target.value)}
-            onKeyDown={handleKeyDown}
-            className="flex-1 bg-transparent text-green-400 caret-green-400 outline-none"
-            spellCheck="false"
-            autoFocus
-          />
+          <div className="relative flex-1">
+            {/* Main input */}
+            <input
+              ref={inputRef}
+              type="text"
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
+              onKeyDown={handleKeyDown}
+              className="w-full bg-transparent text-green-400 caret-green-400 outline-none"
+              spellCheck="false"
+              autoFocus
+            />
+            
+            {/* Fish-shell style autocomplete suggestion */}
+            {suggestion && (
+              <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-0 text-green-400/50">
+                <span className="opacity-0">{input}</span>
+                <span className="text-green-400/70">{suggestion}</span>
+              </div>
+            )}
+          </div>
           <span className="ml-1 inline-block h-5 w-2 animate-pulse bg-green-400"></span>
         </form>
       </div>
