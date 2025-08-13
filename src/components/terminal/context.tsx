@@ -1,6 +1,6 @@
 "use client"
 
-import React, { createContext, useContext, useState } from "react"
+import React, { createContext, useContext, useEffect, useState } from "react"
 
 type TerminalContextType = {
   commands: string[]
@@ -18,6 +18,26 @@ export function TerminalProvider({ children }: { children: React.ReactNode }) {
   const [commands, setCommands] = useState<string[]>([])
   const [history, setHistory] = useState<string[]>([])
   const [directory, setDirectory] = useState("~/yandi.me")
+
+  // Set initial welcome message only on client side to avoid hydration mismatch
+  useEffect(() => {
+    setHistory([
+      "Welcome to Karyana Yandi's terminal!",
+      "",
+      "Available commands:",
+      "  help     - Show this help message",
+      "  clear    - Clear the terminal",
+      "  whoami   - About me",
+      "  projects - View my projects",
+      "  contact  - Contact information",
+      "  blog     - View my blog posts",
+      "  history  - Command history",
+      "  date     - Show current date",
+      "  echo     - Echo text to the terminal",
+      "",
+      "Type a command and press Enter to get started!",
+    ])
+  }, [])
 
   const addCommand = (command: string) => {
     setCommands((prev) => [...prev, command])
