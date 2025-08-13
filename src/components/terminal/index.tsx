@@ -135,7 +135,7 @@ Linkedin: https://linkedin.com/in/karyanayandi`)
     >
       <div className="flex items-center border-b border-green-400/30 px-4 py-2">
         <div className="flex-1 text-center text-xs text-green-400/70">
-          yandi@terminal:~
+          karyana@yandi.me:~
         </div>
       </div>
 
