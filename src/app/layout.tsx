@@ -1,9 +1,10 @@
-import * as React from "react"
 import type { Metadata } from "next"
 import { Fira_Mono } from "next/font/google"
 import { Analytics } from "@vercel/analytics/react"
 
 import "./global.css"
+
+import type { ReactNode } from "react"
 
 import { TerminalProvider } from "@/components/terminal/context"
 
@@ -54,11 +55,7 @@ export const metadata: Metadata = {
   },
 }
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <TerminalProvider>
       <html lang="en" className={firaMono.className}>

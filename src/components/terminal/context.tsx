@@ -1,6 +1,6 @@
 "use client"
 
-import React, { createContext, useContext, useState } from "react"
+import { createContext, useContext, useState, type ReactNode } from "react"
 
 interface TerminalContextProps {
   commands: string[]
@@ -14,7 +14,7 @@ interface TerminalContextProps {
 
 const TerminalContext = createContext<TerminalContextProps | null>(null)
 
-export function TerminalProvider({ children }: { children: React.ReactNode }) {
+export function TerminalProvider({ children }: { children: ReactNode }) {
   const [commands, setCommands] = useState<string[]>([])
   const [history, setHistory] = useState<string[]>([])
   const [directory, setDirectory] = useState("~/yandi.me")

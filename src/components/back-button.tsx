@@ -1,8 +1,6 @@
 "use client"
 
-import * as React from "react"
-
-export const BackButton: React.FC = () => (
+export const BackButton = () => (
   <nav className="flex w-full justify-start py-4">
     <button
       type="button"

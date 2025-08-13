@@ -1,6 +1,12 @@
 "use client"
 
-import React, { useEffect, useRef, useState } from "react"
+import {
+  useEffect,
+  useRef,
+  useState,
+  type FormEvent,
+  type KeyboardEvent,
+} from "react"
 import { cn } from "@yopem-ui/utils"
 
 import { useTerminal } from "./context"
@@ -163,7 +169,7 @@ Linkedin: https://linkedin.com/in/karyanayandi`)
     historyIndexRef.current = -1
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: FormEvent) => {
     e.preventDefault()
     // Use the full input including any accepted suggestion
     const fullInput = input + suggestion
@@ -182,7 +188,7 @@ Linkedin: https://linkedin.com/in/karyanayandi`)
   }
 
   // Handle key down events
-  const handleKeyDown = (e: React.KeyboardEvent) => {
+  const handleKeyDown = (e: KeyboardEvent) => {
     if (e.key === "Enter") {
       e.preventDefault()
       const fullInput = input + suggestion

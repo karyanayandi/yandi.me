@@ -1,4 +1,4 @@
-import * as React from "react"
+import type { ReactNode } from "react"
 import NextImage from "next/image"
 import NextLink from "next/link"
 import { useMDXComponent } from "next-contentlayer2/hooks"
@@ -9,7 +9,7 @@ const CustomLink = ({
   ...rest
 }: {
   href: string
-  children: React.ReactNode
+  children: ReactNode
 }) => {
   if (href.startsWith("/")) {
     return (
