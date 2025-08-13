@@ -55,7 +55,7 @@ export default function RootLayout({
   return (
     <TerminalProvider>
       <html lang="en" className="font-mono">
-        <body className="min-h-screen bg-white p-4 text-black md:p-8 dark:bg-black dark:text-white">
+        <body className="min-h-screen bg-background p-4 text-foreground md:p-8">
           <div className="mx-auto max-w-4xl">{children}</div>
           <Analytics />
         </body>

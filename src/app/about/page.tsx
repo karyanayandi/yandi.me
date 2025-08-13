@@ -11,7 +11,7 @@ export default function AboutPage() {
   return (
     <section className="mx-auto max-w-3xl py-8">
       <BackButton />
-      <div className="rounded-lg border border-black bg-white p-6 font-mono text-black dark:border-white dark:bg-black dark:text-white">
+      <div className="rounded-lg border border-border bg-background p-6 font-mono text-foreground">
         <div className="mb-6">
           <h1 className="mb-4 text-2xl font-bold">{"$ cat about.txt"}</h1>
           <div className="space-y-4">
@@ -59,13 +59,12 @@ export default function AboutPage() {
           <h2 className="mb-4 text-xl font-bold">{"$ cat education.txt"}</h2>
           <ul className="ml-4 space-y-2">
             <li className="list-disc">
-              <span className="text-black dark:text-white">2020-2021:</span>{" "}
-              Universitas Ahmad Dahlan Yogyakarta - Information System (Drop
-              Out)
+              <span className="text-foreground">2020-2021:</span> Universitas
+              Ahmad Dahlan Yogyakarta - Information System (Drop Out)
             </li>
             <li className="list-disc">
-              <span className="text-black dark:text-white">2014-2017:</span> MA
-              Alif Al-Ittifaq Bandung - Natural Science
+              <span className="text-foreground">2014-2017:</span> MA Alif
+              Al-Ittifaq Bandung - Natural Science
             </li>
           </ul>
         </div>
@@ -74,20 +73,16 @@ export default function AboutPage() {
           <h2 className="mb-4 text-xl font-bold">{"$ cat experience.txt"}</h2>
           <ul className="ml-4 space-y-2">
             <li className="list-disc">
-              <span className="text-black dark:text-white">
-                June 2020 - January 2025:
-              </span>{" "}
+              <span className="text-foreground">June 2020 - January 2025:</span>{" "}
               Dafunda Media (PT Melabuh Media Kreatif) - Full-stack Software
               Developer
             </li>
             <li className="list-disc">
-              <span className="text-black dark:text-white">
-                January 2020 - Current:
-              </span>{" "}
+              <span className="text-foreground">January 2020 - Current:</span>{" "}
               Fiverr - Freelance Software Developer
             </li>
             <li className="list-disc">
-              <span className="text-black dark:text-white">
+              <span className="text-foreground">
                 November 2018 - June 2020:
               </span>{" "}
               Freelance Software Developer

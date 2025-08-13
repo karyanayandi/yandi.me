@@ -13,7 +13,7 @@ export default function BlogPage() {
   return (
     <section className="mx-auto max-w-3xl py-8">
       <BackButton />
-      <div className="rounded-lg border border-black bg-white p-6 font-mono text-black dark:border-white dark:bg-black dark:text-white">
+      <div className="rounded-lg border border-border bg-background p-6 font-mono text-foreground">
         <h1 className="mb-4 text-2xl font-bold">{"$ ls blog/"}</h1>
         <div className="space-y-4">
           {allBlogs
@@ -26,14 +26,14 @@ export default function BlogPage() {
             .map((post) => (
               <Link
                 key={post.slug}
-                className="block border-l-2 border-black py-2 pl-4 transition-colors hover:bg-black/10 dark:border-white dark:hover:bg-white/10"
+                className="block border-l-2 border-border py-2 pl-4 transition-colors hover:bg-foreground/10"
                 href={`/blog/${post.slug}`}
               >
                 <div className="flex flex-col">
-                  <span className="font-bold text-black dark:text-white">
+                  <span className="font-bold text-foreground">
                     {">"} {post.title}
                   </span>
-                  <span className="mt-1 text-sm text-gray-500">
+                  <span className="mt-1 text-sm text-accent-foreground/50">
                     {post.publishedAt} | {post.summary}
                   </span>
                 </div>

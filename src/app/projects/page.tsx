@@ -11,11 +11,11 @@ export default function ProjectsPage() {
   return (
     <section className="mx-auto max-w-3xl py-8">
       <BackButton />
-      <div className="rounded-lg border border-black bg-white p-6 font-mono text-black dark:border-white dark:bg-black dark:text-white">
+      <div className="rounded-lg border border-border bg-background p-6 font-mono text-foreground">
         <h1 className="mb-4 text-2xl font-bold">{"$ ls projects/"}</h1>
         <div className="space-y-4">
-          <div className="border-l-2 border-black pl-4 dark:border-white">
-            <h2 className="text-xl font-bold text-black dark:text-white">
+          <div className="border-l-2 border-border pl-4">
+            <h2 className="text-xl font-bold text-foreground">
               Open Source Projects
             </h2>
             <p className="mt-2">
@@ -34,8 +34,8 @@ export default function ProjectsPage() {
             </p>
           </div>
 
-          <div className="border-l-2 border-black pl-4 dark:border-white">
-            <h2 className="text-xl font-bold text-black dark:text-white">
+          <div className="border-l-2 border-border pl-4">
+            <h2 className="text-xl font-bold text-foreground">
               Freelance Work
             </h2>
             <p className="mt-2">
