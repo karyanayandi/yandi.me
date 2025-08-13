@@ -110,7 +110,7 @@ Linkedin: https://linkedin.com/in/karyanayandi`)
           )
         }
     }
-    
+
     // Reset history index after executing a command
     historyIndexRef.current = -1
   }
@@ -129,8 +129,8 @@ Linkedin: https://linkedin.com/in/karyanayandi`)
   const getSuggestion = (value: string): string => {
     if (!value) return ""
     const lowerValue = value.toLowerCase()
-    const matchingCommand = AVAILABLE_COMMANDS.find(cmd => 
-      cmd.startsWith(lowerValue) && cmd !== lowerValue
+    const matchingCommand = AVAILABLE_COMMANDS.find(
+      (cmd) => cmd.startsWith(lowerValue) && cmd !== lowerValue,
     )
     return matchingCommand ? matchingCommand.substring(value.length) : ""
   }
@@ -162,7 +162,10 @@ Linkedin: https://linkedin.com/in/karyanayandi`)
       e.preventDefault()
       if (commands.length > 0) {
         // Navigate through command history
-        if (historyIndexRef.current >= 0 && historyIndexRef.current < commands.length - 1) {
+        if (
+          historyIndexRef.current >= 0 &&
+          historyIndexRef.current < commands.length - 1
+        ) {
           historyIndexRef.current++
           setInput(commands[historyIndexRef.current])
         } else {
@@ -175,6 +178,13 @@ Linkedin: https://linkedin.com/in/karyanayandi`)
       e.preventDefault()
       // Accept the current suggestion
       if (suggestion) {
+        setInput(input + suggestion)
+        setSuggestion("")
+      }
+    } else if (e.key === "ArrowRight") {
+      // Accept the current suggestion if present
+      if (suggestion) {
+        e.preventDefault()
         setInput(input + suggestion)
         setSuggestion("")
       }
@@ -240,7 +250,7 @@ Linkedin: https://linkedin.com/in/karyanayandi`)
               spellCheck="false"
               autoFocus
             />
-            
+
             {/* Fish-shell style autocomplete suggestion */}
             {suggestion && (
               <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-0 text-green-400/50">
