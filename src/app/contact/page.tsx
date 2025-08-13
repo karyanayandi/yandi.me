@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
 
-import { HomeNav } from "@/components/home-nav"
+import { BackButton } from "@/components/back-button"
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <section className="mx-auto max-w-3xl py-8">
-      <HomeNav />
+      <BackButton />
       <div className="rounded-lg border border-black bg-white p-6 font-mono text-black dark:border-white dark:bg-black dark:text-white">
         <h1 className="mb-4 text-2xl font-bold">{"$ cat contact.txt"}</h1>
         <div className="space-y-3">

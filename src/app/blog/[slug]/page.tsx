@@ -2,7 +2,7 @@ import { notFound } from "next/navigation"
 import { allBlogs } from "contentlayer/generated"
 import Balancer from "react-wrap-balancer"
 
-import { HomeNav } from "@/components/home-nav"
+import { BackButton } from "@/components/back-button"
 import { Mdx } from "@/components/mdx"
 
 export function generateStaticParams() {
@@ -68,7 +68,7 @@ export default async function Blog(props: {
 
   return (
     <>
-      <HomeNav />
+      <BackButton />
       <section>
         <script type="application/ld+json">
           {JSON.stringify(post.structuredData)}

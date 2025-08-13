@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import Link from "next/link"
 import { allBlogs } from "contentlayer/generated"
 
-import { HomeNav } from "@/components/home-nav"
+import { BackButton } from "@/components/back-button"
 
 export const metadata: Metadata = {
   title: "Blog",
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function BlogPage() {
   return (
     <section className="mx-auto max-w-3xl py-8">
-      <HomeNav />
+      <BackButton />
       <div className="rounded-lg border border-black bg-white p-6 font-mono text-black dark:border-white dark:bg-black dark:text-white">
         <h1 className="mb-4 text-2xl font-bold">{"$ ls blog/"}</h1>
         <div className="space-y-4">
