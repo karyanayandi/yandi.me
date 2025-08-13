@@ -64,7 +64,7 @@ export default {
       },
       fontFamily: {
         sans: ["var(--font-sans)", ...fontFamily.sans],
-        mono: ["var(--font-mono)", ...fontFamily.mono],
+        mono: ["Fira Mono", "var(--font-mono)", ...fontFamily.mono],
       },
       typography: {
         quoteless: {

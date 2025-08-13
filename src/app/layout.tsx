@@ -1,10 +1,17 @@
 import * as React from "react"
 import type { Metadata } from "next"
+import { Fira_Mono } from "next/font/google"
 import { Analytics } from "@vercel/analytics/react"
 
 import "./global.css"
 
 import { TerminalProvider } from "@/components/terminal/context"
+
+const firaMono = Fira_Mono({
+  weight: ["400", "700"],
+  subsets: ["latin"],
+  display: "swap",
+})
 
 export const metadata: Metadata = {
   title: {
@@ -54,7 +61,7 @@ export default function RootLayout({
 }) {
   return (
     <TerminalProvider>
-      <html lang="en" className="font-mono">
+      <html lang="en" className={firaMono.className}>
         <body className="min-h-screen bg-background p-4 text-foreground md:p-8">
           <div className="mx-auto max-w-4xl">{children}</div>
           <Analytics />
