@@ -2,7 +2,6 @@
 
 ## TODO: 
 - [ ] fill projects page
-- [ ] add dark mode switcher toggle
 - [x] add link to resume
+- [x] upgrade to contentlayer2
 - [ ] upgrade to tailwindcss 4
-- [ ] upgrade to contentlayer2
