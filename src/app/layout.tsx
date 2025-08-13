@@ -1,24 +1,10 @@
 import * as React from "react"
 import type { Metadata } from "next"
-import { Inter } from "next/font/google"
-import localFont from "next/font/local"
 import { Analytics } from "@vercel/analytics/react"
 
 import "./global.css"
 
-import { cn } from "@yopem-ui/utils"
-
-import Sidebar from "@/components/sidebar"
-import { ThemeProvider } from "@/components/theme"
-
-const inter = Inter({ subsets: ["latin"] })
-
-const sundanese = localFont({
-  src: "../../public/fonts/SundaneseUnicode-2.0.ttf",
-  weight: "700",
-  variable: "--font-sundanese",
-  display: "swap",
-})
+import { TerminalProvider } from "@/components/terminal/context"
 
 export const metadata: Metadata = {
   title: {
@@ -67,19 +53,15 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <ThemeProvider>
-      <html lang="en" className={cn(inter.className, sundanese.variable)}>
-        <body className="mx-4 mb-40 mt-8 flex max-w-4xl flex-col antialiased md:mt-20 md:flex-row lg:mx-auto lg:mt-32">
-          {/* Top-left gradient overlay */}
-          <div className="fixed left-3/4 right-0 top-0 -z-10 hidden h-40 bg-gradient-to-bl from-primary to-background to-80% blur-[5.25rem] supports-[filter:blur(0)]:block"></div>
-          <div className="fixed left-3/4 right-0 top-52 -z-10 hidden h-20 bg-gradient-to-bl from-black to-background to-80% blur-[5.25rem] supports-[filter:blur(0)]:block dark:from-slate-300"></div>
-          <Sidebar />
-          <main className="mt-6 flex min-w-0 flex-auto flex-col px-2 md:mt-0 md:px-0">
+    <TerminalProvider>
+      <html lang="en" className="font-mono">
+        <body className="bg-black text-green-400 min-h-screen p-4 md:p-8">
+          <div className="max-w-4xl mx-auto">
             {children}
-            <Analytics />
-          </main>
+          </div>
+          <Analytics />
         </body>
       </html>
-    </ThemeProvider>
+    </TerminalProvider>
   )
 }

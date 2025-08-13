@@ -1,5 +1,4 @@
 import type { Metadata } from "next"
-import NextLink from "next/link"
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -8,42 +7,31 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <section>
-      <h1 className="text-3xl font-bold">Contact</h1>
-      <div className="prose">
-        <ul>
-          <li>
-            Email:{" "}
-            <NextLink href="mailto:karyana@yandi.me">karyana@yandi.me</NextLink>
-          </li>
-          <li>
-            Github:{" "}
-            <NextLink href="https://github.com/karyanayandi" target="__blank">
-              @karyanayandi
-            </NextLink>
-          </li>
-          <li>
-            X:{" "}
-            <NextLink href="https://x.com/@karyanayandi" target="__blank">
-              @karyanayandi
-            </NextLink>
-          </li>
-          <li>
-            Blue Sky:{" "}
-            <NextLink href="https://bsky.app/profile/yandi.me" target="__blank">
-              @yandi.me
-            </NextLink>
-          </li>
-          <li>
-            Linkedin:{" "}
-            <NextLink
-              href="https://linkedin.com/in/karyanayandi"
-              target="__blank"
-            >
-              @karyanayandi
-            </NextLink>
-          </li>
-        </ul>
+    <section className="max-w-3xl mx-auto py-8">
+      <div className="bg-black border border-green-400 rounded-lg p-6 text-green-400 font-mono">
+        <h1 className="text-2xl font-bold mb-4">{"$ cat contact.txt"}</h1>
+        <div className="space-y-3">
+          <div>
+            <span className="text-green-300">Email:</span>{" "}
+            <a href="mailto:karyana@yandi.me" className="underline">karyana@yandi.me</a>
+          </div>
+          <div>
+            <span className="text-green-300">Github:</span>{" "}
+            <a href="https://github.com/karyanayandi" target="_blank" className="underline">@karyanayandi</a>
+          </div>
+          <div>
+            <span className="text-green-300">X:</span>{" "}
+            <a href="https://x.com/@karyanayandi" target="_blank" className="underline">@karyanayandi</a>
+          </div>
+          <div>
+            <span className="text-green-300">Blue Sky:</span>{" "}
+            <a href="https://bsky.app/profile/yandi.me" target="_blank" className="underline">@yandi.me</a>
+          </div>
+          <div>
+            <span className="text-green-300">LinkedIn:</span>{" "}
+            <a href="https://linkedin.com/in/karyanayandi" target="_blank" className="underline">@karyanayandi</a>
+          </div>
+        </div>
       </div>
     </section>
   )
