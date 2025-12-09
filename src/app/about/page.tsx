@@ -60,7 +60,7 @@ export default function AboutPage() {
           <ul className="ml-4 space-y-2">
             <li className="list-disc">
               <span className="text-foreground">2020-2021:</span> Universitas
-              Ahmad Dahlan Yogyakarta - Information System (Drop Out)
+              Ahmad Dahlan Yogyakarta - Information System
             </li>
             <li className="list-disc">
               <span className="text-foreground">2014-2017:</span> MA Alif
