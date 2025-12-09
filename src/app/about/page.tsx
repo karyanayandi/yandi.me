@@ -73,6 +73,10 @@ export default function AboutPage() {
           <h2 className="mb-4 text-xl font-bold">{"$ cat experience.txt"}</h2>
           <ul className="ml-4 space-y-2">
             <li className="list-disc">
+              <span className="text-foreground">May 2025 - October 2025:</span>{" "}
+              JA Software Solutions LTD - Frontend Engineer
+            </li>
+            <li className="list-disc">
               <span className="text-foreground">June 2020 - January 2025:</span>{" "}
               Dafunda Media (PT Melabuh Media Kreatif) - Full-stack Software
               Developer
