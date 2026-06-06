@@ -25,10 +25,10 @@ export const metadata: Metadata = {
     default: "Karyana Yandi",
     template: "%s | Karyana Yandi",
   },
-  description: "Full-stack Software Developer",
+  description: "Full-stack Software Engineer",
   openGraph: {
     title: "Karyana Yandi",
-    description: "Full-stack Software Developer",
+    description: "Full-stack Software Engineer",
     url: "https://yandi.me",
     siteName: "Karyana Yandi",
     images: [

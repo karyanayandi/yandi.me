@@ -91,18 +91,24 @@ export default function AboutPage() {
         <h2 className="text-2xl font-bold">Work Experience</h2>
         <TimeLine>
           <TimeLineList
+            date="May 2025 - Current"
+            title="JA Software Solutions LTD"
+            description="Frontend Engineer"
+          />
+
+          <TimeLineList
             date="June 2020 - January 2025"
             title="Dafunda Media (PT Melabuh Media Kreatif)"
-            description="Full-stack Software Developer"
+            description="Full-stack Software Engineer"
           />
           <TimeLineList
             date="January 2020 - Current"
             title="Fiverr"
-            description="Freelance Software Developer"
+            description="Freelance Software Engineer"
           />
           <TimeLineList
             date="November 2018 - June 2020"
-            title="Freelance Software Developer"
+            title="Freelance Software Engineer"
           />
         </TimeLine>
       </div>
