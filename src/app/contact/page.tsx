@@ -14,7 +14,9 @@ export default function ContactPage() {
         <ul>
           <li>
             Email:{" "}
-            <NextLink href="mailto:karyana@yandi.me">karyana@yandi.me</NextLink>
+            <NextLink href="mailto:xkaryanayandi@gmail.com">
+              xkaryanayandi@gmail.com
+            </NextLink>
           </li>
           <li>
             Github:{" "}
